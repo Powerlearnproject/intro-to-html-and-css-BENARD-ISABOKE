@@ -5,73 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Expense Tracker</h1>
-        <!-- Navigation or any header content -->
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('register')">Register</a></li>
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+                <li><a href="#" onclick="showSection('add-expense')">Add Expense</a></li>
+                <li><a href="#" onclick="showSection('edit-expense')">Edit Expense</a></li>
+                <li><a href="#" onclick="showSection('view-expense')">View Expense</a></li>
+            </ul>
+        </nav>
     </header>
     
     <main>
-        <section>
+        <section id="home">
             <h2>Welcome to Expense Tracker</h2>
             <!-- Content of the landing page -->
         </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Expense Tracker</title>
-</head>
-<body>
-    <header>
-        <h1>Register</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
-            <h2>Create an Account</h2>
-            <form action="submit_registration_form.php" method="POST">
-                <!-- Form fields for registration -->
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Register</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
+        
+        <section id="register" style="display:none;">
             <h2>Create an Account</h2>
             <form action="register.php" method="POST">
-                <!-- Form fields for registration -->
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
@@ -83,33 +49,10 @@
                 <button type="submit">Register</button>
             </form>
         </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Login</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
+        
+        <section id="login" style="display:none;">
             <h2>Log into Your Account</h2>
             <form action="login.php" method="POST">
-                <!-- Form fields for login -->
                 <div>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
@@ -121,33 +64,10 @@
                 <button type="submit">Login</button>
             </form>
         </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Expense - Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Add Expense</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
+        
+        <section id="add-expense" style="display:none;">
             <h2>Add a New Expense</h2>
             <form action="add_expense.php" method="POST">
-                <!-- Form fields for adding an expense -->
                 <div>
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title" required>
@@ -163,33 +83,10 @@
                 <button type="submit">Add Expense</button>
             </form>
         </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Expense - Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Edit Expense</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
+        
+        <section id="edit-expense" style="display:none;">
             <h2>Edit Expense Details</h2>
             <form action="edit_expense.php" method="POST">
-                <!-- Form fields for editing an expense -->
                 <div>
                     <label for="title">Title:</label>
                     <input type="text" id="title" name="title" required>
@@ -205,30 +102,8 @@
                 <button type="submit">Save Changes</button>
             </form>
         </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-<br>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Expense - Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>View Expense</h1>
-        <!-- Navigation or any header content -->
-    </header>
-    
-    <main>
-        <section>
+        
+        <section id="view-expense" style="display:none;">
             <h2>Expense Details</h2>
             <!-- Display of expense details -->
             <div>
@@ -244,6 +119,6 @@
     </footer>
 </body>
 </html>
-<br>
+
 
 
